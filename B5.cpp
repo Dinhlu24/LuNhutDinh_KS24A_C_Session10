@@ -3,7 +3,7 @@
 int binarySearch(int a[],int n,int x){
 	int low=0, high = n - 1, xIndex=0;
 	while(low <= high){
-		int mid = (low + high)/2;
+		int mid = low + (high - low)/2;
 		if(a[mid] == x){
 			xIndex = mid;
 			return xIndex+1;

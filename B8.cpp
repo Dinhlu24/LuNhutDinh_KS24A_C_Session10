@@ -21,13 +21,14 @@ int main(){
 			printf("\n");
 		}
 		
-		int size = n*m;
-		for(int i=0;i<size;i++){
-			for(int j=0;j<size;j++){
-				if(matrix[i%m][i/m] < matrix[j%m][j/m]){
-					int tmp=matrix[j%m][j/m];
-					matrix[j%m][j/m] = matrix[i%m][i/m];
-					matrix[i%m][i/m] = tmp;
+		for(int k=0;k < n-1;k++){
+			for(int i=0;i<n-1;i++){
+				for(int j=0;j<n-i-1;j++){
+					if(matrix[j][k] > matrix[j+1][k]){
+						int tmp=matrix[j][k];
+						matrix[j][k] = matrix[j+1][k];
+						matrix[j + 1][k] = tmp;
+					}
 				}
 			}
 		}
